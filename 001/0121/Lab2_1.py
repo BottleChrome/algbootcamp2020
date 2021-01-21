@@ -14,20 +14,14 @@
 
 
 # 풀이 함수 
-def solution(input_n, input_list):
-    input_list.sort()
-    answer = input_list[0]
-    return answer
 
-def test():
-    # 입력 
-    input_n = int(input())
-    input_list =list(map(int, input().split()))
-    # 풀이
-    answer = solution(input_n, input_list)
-    # 출력 
-    print(answer)
-    
-    return answer 
 
-test()
+
+int_n = int(input())
+int_list = list(map(int, input().split()))
+
+min = int_list[0]
+for i in int_list :
+    if i < min : min = i
+
+print(min)

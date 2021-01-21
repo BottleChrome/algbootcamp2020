@@ -9,24 +9,12 @@
 
 
 
-
-
-
-
-def solution(input_n, input_list):
-    input_list.sort()
-    answer = input_list[0]
-    return answer
-
-def test():
-    # 입력 
-    input_n = int(input())
-    yaksu_list = []
-    for i in range(1, input_n+1) :
-        if input_n % i == 0 :
-            yaksu_list.append(i)
-    print(len(yaksu_list))
-
-    # 출력 
-    
-test()
+import math
+n = int(input())
+answer = 0 
+yaksu_list = []
+count = 0
+for i in range(1,int(math.sqrt(n))+1):
+    if i * i == n : count += 1  
+    elif n % i == 0 : count += 2
+print(count)

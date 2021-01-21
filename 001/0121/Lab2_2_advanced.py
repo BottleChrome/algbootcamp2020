@@ -9,16 +9,30 @@
 # 53
 # 7 2 8 4 2 7
 
+# 멀티 스레드
+# 멀티 프로세싱 
+# 멀티 스레드 세이프 
+
+
 
 int_n = int(input())
 int_list = list(map(int, input().split()))
 
+half = int_n // 2 + 1
 min = int_list[0]
-max = int_list[0]
+max = int_list[half]
 
-for i in int_list :
-    if i < min : min = i
-    elif i > max : max = i
+for i in range(0,len(int_list)-1, 2):
+    if int_list[i] < int_list[i+1]:
+        if min >int_list[i]: min = int_list[i]
+        if max < int_list[i+1] : max = int_list[i+1]
+    else:
+        if min >int_list[i+1]: min = int_list[i+1]
+        if max < int_list[i] : max = int_list[i]
+
+
+print(half)
+
 
 print("%d %d "%(min,max))
 
