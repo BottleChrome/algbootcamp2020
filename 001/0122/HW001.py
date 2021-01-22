@@ -11,12 +11,13 @@
 # 123456 3
 
 n = int(input())
-
 def getSum(n) :
-    if n < 10 : return n 
-    num_list = str(n)
-    sum  = 0 
-    for i in num_list:
-        sum += int(i)
-    return getSum(sum)
+    while n >= 10 :
+        sum  = 0 
+        while n > 0 :
+            sum += n%10
+            n //= 10
+        n = sum
+    return n
+        
 print(getSum(n))
