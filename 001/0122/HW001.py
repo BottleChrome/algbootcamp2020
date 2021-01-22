@@ -13,7 +13,7 @@
 n = int(input())
 
 def getSum(n) :
-    if n // 10 == 0 : return n 
+    if n < 10 : return n 
     num_list = str(n)
     sum  = 0 
     for i in num_list:
