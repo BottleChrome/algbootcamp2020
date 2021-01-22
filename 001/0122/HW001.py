@@ -13,13 +13,10 @@
 n = int(input())
 
 def getSum(n) :
-    if n // 10 == 0 :
-        return n 
-    else :
-        num_list = str(n)
-        sum  = 0 
-        for i in num_list:
-            sum += int(i)
-        return getSum(sum)
-
+    if n // 10 == 0 : return n 
+    num_list = str(n)
+    sum  = 0 
+    for i in num_list:
+        sum += int(i)
+    return getSum(sum)
 print(getSum(n))
