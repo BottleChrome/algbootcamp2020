@@ -13,10 +13,7 @@
 
 
 
-def hanoi(n,k) :
-    k -= 1
-    if k == 0 :
-        return n
+def hanoi(n) :
     if n == 0 :
         return
     if n == 1 :

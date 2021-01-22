@@ -40,5 +40,5 @@ def fibo_general(n):
     return int(ans)
 
 
-print(fibo_general(n))
+print(fibo_general(n+1))
 
