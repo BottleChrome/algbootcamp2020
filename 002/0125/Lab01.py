@@ -33,19 +33,25 @@ while len(answer) < 3:
     if not n in answer :
         answer.append(n)
 
-print(answer)
+print("Answer : " , answer)
 
-# num = list(map(int, input().split()))
-num = int(input())
-num_list = []
-while num > 0:
-    num_list.insert(0,num % 10 )
-    num = num // 10
 ball_count = 0 
 strike_count = 0
-for idx, n in enumerate(answer) :
-    if n in num_list :
-        if num_list[idx] == answer[idx]: strike_count += 1
-        else : ball_count += 1
-print("%dS %dB"%(strike_count, ball_count))
+score = 0
+# num = list(map(int, input().split()))
+while strike_count < 3:
+    score += 1
+    num = int(input("Guess: "))
+    num_list = []
+    while num > 0:
+        num_list.insert(0,num % 10 )
+        num = num // 10
+    ball_count = 0 
+    strike_count = 0
+    for idx, n in enumerate(answer) :
+        if n in num_list :
+            if num_list[idx] == answer[idx]: strike_count += 1
+            else : ball_count += 1
+    print("%dS %dB"%(strike_count, ball_count))
     
+print("Score : %d"%(score))  
