@@ -11,3 +11,36 @@
 
 
 print(12345678912 + 82746827346287364)
+
+a =       12345678912
+b = 82746827346287364
+
+a = [int(x) for x in str(a)]
+b = [int(x) for x in str(b)]
+result = []
+print(a,b)
+c = 0 
+carry = 0 
+while True  :
+    n = 0 
+    m = 0 
+    if a :
+        n = a.pop()
+    else :
+        if not b :
+            break
+    if b :
+        m = b.pop()
+    
+    last = n * m + carry
+    carry = 0 
+    while last >= 10 :
+        carry += 1
+        last -= 10
+    result.insert(0,last)
+    print(result)
+
+
+
+
+

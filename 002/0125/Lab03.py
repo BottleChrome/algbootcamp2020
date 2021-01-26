@@ -10,14 +10,38 @@
 # 입력 출력
 # 3 3
 # 10 11
+import math
+
+def getInterval(k):
+    return 2*(math.floor(math.log10((9*k+1)/18)))
+
+def IntervalCount(i):
+    i -= 1
+    i //= 2 
+    return 9 * 10 ** i
+
+def isPelindrome(n):
+    r = 0
+    a = n
+    while a > 0:
+        r = r*10 + a%10
+        a //= 10
+    return n==r 
 
 k = int(input())
-s = 1 
-i = 1
-while s < k :
-    i+= 1
-    s += 9 * 10**((i-1)//2)
-    print(s)
 
-# print(s)
+countSum = 1
+i = 0
+while countSum  < k :
+     countSum += IntervalCount(i+1)
+     i += 1
+
+k -= countSum 
+k += IntervalCount(i)
+i = 10**(i-1)
+
+while k > 0 :
+    i += 1
+    if isPelindrome(i):
+        k -= 1
 print(i)
