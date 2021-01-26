@@ -24,3 +24,15 @@ while array[i] == array[0]:
     i += 1
 print(array[i])    
 
+min = array[0]
+lmin = array[0] + array[1]
+for a in array :
+    if a < min :
+        lmin = min
+        min = a
+    elif (a < lmin) & (a > min):
+        lmin = a 
+
+print(lmin)
+
+

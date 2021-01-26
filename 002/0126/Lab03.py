@@ -20,24 +20,24 @@ def pivo(n ):
     else :
         return pivo(n-1)+pivo(n-2)
 
-print(pivo(n))
+#print(pivo(n))
 
 
 # 리스트로 구현 
-pivo_array = []
-for i in range(n):
-    if i == 0 :
-        pivo_array.append(1)
-    elif i == 1 :
-        pivo_array.append(1)
-    else :
-        pivo_array.append(pivo_array[i-1]+pivo_array[i-2])
-print(pivo_array.pop())
+# pivo_array = []
+# for i in range(n):
+#     if i == 0 :
+#         pivo_array.append(1)
+#     elif i == 1 :
+#         pivo_array.append(1)
+#     else :
+#         pivo_array.append(pivo_array[i-1]+pivo_array[i-2])
+#print(pivo_array.pop())
 
 
 # 반복문으로 구현 
 
-def fibo(n):
+def fivo(n):
     if n < 2:
         return n
     a, b = 0 , 1
@@ -45,11 +45,11 @@ def fibo(n):
         a, b = b, a+b 
     return b 
 
-print(fibo(n))
+# print(fivo(n))
 
-def fivo(n):
+def fibo(n):
     sqrt_5 = 5 ** (1/2)
-    ans = 1 / sqrt_5 * ( ((1 + sqrt_5) / 2) ** n  - ((1 - sqrt_5) / 2) ** n )
+    ans = (1 / sqrt_5 * ( ((1 + sqrt_5) / 2) ** n  - ((1 - sqrt_5) / 2) ** n )) % 1000000009
     return int(ans)
 
-print(fivo(n))
+print(fibo(n))
