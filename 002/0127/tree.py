@@ -74,6 +74,6 @@ print(bst.find(15)) # True
 print(bst.find(17)) # False
 
 # Delete
-print(bst.delete(55)) # True
-print(bst.delete(14)) # True
+print(bst.delete(49)) # True
+print(bst.delete(45)) # True
 print(bst.delete(11)) # False
