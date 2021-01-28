@@ -30,10 +30,6 @@ for i in range(0,len(int_list)-1, 2):
         if min >int_list[i+1]: min = int_list[i+1]
         if max < int_list[i] : max = int_list[i]
 
-
-print(half)
-
-
 print("%d %d "%(min,max))
 
 

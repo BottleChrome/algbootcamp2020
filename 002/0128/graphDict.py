@@ -16,3 +16,5 @@ for i in range(n):
         adj[x] = [y]
         adj[y] = [x]
 print(adj)
+
+
