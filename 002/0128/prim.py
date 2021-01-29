@@ -28,11 +28,12 @@ k = 9
 adj = {1: {2: 8, 4: 9, 5: 11}, 2: {1: 8, 3: 10}, 3: {2: 10, 4: 5}, 4: {1: 9, 3: 5, 7: 12, 5: 13}, 5: {1: 11, 4: 13, 6: 8}, 6: {5: 8, 7: 7}, 7: {4: 12, 6: 7}}
 
 checkList = [0] * n
-value = [100000] * n
+value = ['inf'] * n
 queue = queue.PriorityQueue()
 value[0] = 0
 queue.put((0,1))
 sum = 0
+print("Prim Algorithm")
 while not queue.empty() :
   s, r = queue.get()
   if checkList[r-1] : continue
@@ -41,6 +42,9 @@ while not queue.empty() :
   sum += s
   for i in adj[r].keys() :
     queue.put((adj[r][i], i))
+
+
+
 
 
 
