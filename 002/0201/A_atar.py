@@ -73,13 +73,19 @@ locSet = [[10, 100], [30, 50], [80, 20], [80, 110], [80, 90], [70, 60], [90, 40]
 
 vSet = {1: {2, 4}, 2: {1, 3, 4}, 4: {1, 2, 5, 6, 7}, 3: {2}, 5: {9, 4, 6, 7}, 6: {4, 5, 7, 8, 10}, 7: {4, 5, 6, 8, 9, 10}, 9: {8, 10, 5, 7}, 8: {9, 6, 7}, 10: {9, 6, 7}}
 
-visited = []
+visited = [0] * n 
 hList = [0] * n
 for i in range(n):
   print(i)
   hList[i] = heuristic(locSet[i],locSet[start-1],locSet[end-1])
-
-
-
 print(hList)
+value = [0] * n
+queue = queue.PriorityQueue()
+queue.put((0,start))
+while not queue.empty():
+  s,r = queue.get()
+  if r == end : break
+  if visited[r] : continue
+  visited[r] = 1
+  for key in vSet[r].keys():
 
