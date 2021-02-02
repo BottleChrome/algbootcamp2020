@@ -1,28 +1,32 @@
 
 
-n = 6
+n = int(input())
 row = [0] * n
 result = 0
+numSet = set(range(n))
+flag = [[False]* (2*n) for _ in range(3)]
 
-def check(x) :
+def check(x, flag) :
   for i in range(x):
-    if row[x] == row[i] or  abs(row[x]-row[i]) == x- i:
+    if abs(row[x]-row[i]) == x- i:
       return False
   return True
+# def choose(numSet) :
+  
         
-def nQueen(x) :
+def nQueen(x, numSet,flag) :
   global result
   if x == n :
-    result += 1; print(row)
+    result += 1; # print(row)
   else:
-    for i in range(n):
+    for i in numSet:
       row[x] = i
-      if check(x):
-        nQueen(x+1)
+      candidate = numSet - {i}
+      
+      if check(x,flag):
+        nQueen(x+1,candidate,flag)
 
-nQueen(0)
+nQueen(0,numSet,flag)
 print(result)
-
-
-
+# print(numSet)
 
