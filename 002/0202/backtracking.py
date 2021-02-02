@@ -19,3 +19,4 @@ def backtracking(varr, current, n, k) :
 n , k = map(int, input().split())
 varr = [0] * k
 backtracking(varr, 0 , n , k)
+
