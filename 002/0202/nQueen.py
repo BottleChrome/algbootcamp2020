@@ -1,6 +1,6 @@
 
 
-n = 4
+n = 6
 row = [0] * n
 result = 0
 
@@ -13,7 +13,7 @@ def check(x) :
 def nQueen(x) :
   global result
   if x == n :
-    result += 1
+    result += 1; print(row)
   else:
     for i in range(n):
       row[x] = i
@@ -24,14 +24,5 @@ nQueen(0)
 print(result)
 
 
-n = 8
-row = [[0] * n  for x in range(n)] 
-def nQueen(x):
-  if x==n : result += 1
-  else :
-    for i in range(n): 
-      row[x] = i
-      if check(x) :
-        nQueen(x+1)
 
 
